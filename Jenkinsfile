@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{
-                    nexusArtifactUploader artifacts: [
+                 nexusArtifactUploader artifacts: [
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
