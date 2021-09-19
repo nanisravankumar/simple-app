@@ -13,6 +13,9 @@ pipeline {
             }
         }
         stage('Upload War To Nexus'){
+            agent {
+            label 'label'
+        }
             steps{
                  nexusArtifactUploader artifacts: [
                         [
