@@ -4,10 +4,10 @@ pipeline {
         maven 'maven3'
     }
     stages{
-        agent {
+        stage('Build'){
+            agent {
             label 'label'
         }
-        stage('Build'){
             steps{
                  sh script: 'mvn clean package'
             }
