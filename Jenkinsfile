@@ -1,21 +1,15 @@
 pipeline {
-    agent none
+    agent any
     tools {
         maven 'maven3'
     }
     stages{
         stage('Build'){
-            agent {
-            label 'label'
-        }
             steps{
                  sh script: 'mvn clean package'
             }
         }
-        stage('Upload War To Nexus'){
-            agent {
-            label 'label'
-        }
+        stage('Upload War To Nexus') {
             steps{
                  nexusArtifactUploader artifacts: [
                         [
